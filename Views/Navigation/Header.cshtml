@@ -1,0 +1,95 @@
+﻿<!-- Header Section Begin -->
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__left">
+                        <ul>
+                            <li><i class="fa fa-home"></i>GundameVN</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="header__top__right">
+                        <div class="header__top__right__auth">
+                            @if (Session["KhachHang"] == null)
+                            {
+                                @Html.ActionLink("Tài Khoản", "Login", "User");
+                            }
+                            else
+                            {
+                                string tenKh = Session["TenKhachHang"].ToString();
+                                @Html.ActionLink(tenKh, "Profile", "User");
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="header__logo">
+                    <a href="#"><img src="img/logo.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="header__menu">
+                    <ul>
+                        <li class="active">@Html.ActionLink("GundamME", "Index", "GundamShop")
+                        <li>@Html.ActionLink("Cửa Hàng", "FullShopContent", "GundamShop")</li>
+                        <li><a href="./contact.html">Liên Hệ</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3">
+                <div class="header__cart">
+                    @Html.Action("CartButton", "Cart");
+                    <div class="header__cart__price">item: <span>0 VNĐ</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="humberger__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+<!-- Header Section End -->
+<!-- Hero Section Begin -->
+<section class="hero hero-normal">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="hero__categories">
+                    <div class="hero__categories__all">
+                        <i class="fa fa-bars"></i>
+                        <span>DANH MỤC</span>
+                    </div>
+                    @Html.Action("ListCapDo", "GundamShop")
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="hero__search">
+                    <div class="hero__search__form">
+                        <form action="#">
+                            <input type="text" placeholder="What do yo u need?">
+                            <button type="submit" class="site-btn">TÌM KIẾM</button>
+                        </form>
+                    </div>
+                    <div class="hero__search__phone">
+                        <div class="hero__search__phone__icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="hero__search__phone__text">
+                            <h5>+84 923434893</h5>
+                            <span>9:00 - 21:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->

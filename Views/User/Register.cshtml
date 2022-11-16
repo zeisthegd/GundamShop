@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div id="first">
+                <div class="myform form ">
+                    <div class="logo mb-3">
+                        <div class="col-md-12 text-center">
+                            <h1>Đăng Ký</h1>
+                        </div>
+                    </div>
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="col-md-12 ">
+                            <div class="form-group">
+                                <p class="text-center" style="color:red;">@ViewBag.Error
+                            </div>
+                        </div>
+                    }
+                    @using (Html.BeginForm("Register", "User", FormMethod.Post))
+                    {
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Tên Đăng Nhập</label>
+                            <input type="text" name="TenDangNhap" class="form-control" id="TenDangNhap" aria-describedby="emailHelp" placeholder="username001">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Mật Khẩu</label>
+                            <input type="password" name="MatKhau" class="form-control" id="MatKhau" aria-describedby="emailHelp" placeholder="*********">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Họ và Tên</label>
+                            <input type="text" name="HoTen" class="form-control" id="HoTen" aria-describedby="emailHelp" placeholder="Nguyễn Văn A">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Họ và Tên</label>
+                            <input type="date" name="NgaySinh" class="form-control" id="NgaySinh" aria-describedby="emailHelp" placeholder="Nguyễn Văn A">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Địa Chỉ</label>
+                            <input type="text" name="DiaChi" id="DiaChi" class="form-control" aria-describedby="emailHelp" placeholder="Việt Nam">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" name="Email" id="Email" class="form-control" aria-describedby="emailHelp" placeholder="tenEmail@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Điện Thoại</label>
+                            <input type="text" name="DienThoai" id="DienThoai" class="form-control" aria-describedby="emailHelp" placeholder="XXXXXXXXXX">
+                        </div>
+                        <div class="col-md-12 text-center mb-3">
+                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Đăng Kí</button>
+                        </div>
+                        <div class="col-md-12 ">
+                            <div class="form-group">
+                                <p class="text-center">Bạn đã có tài khoản? @Html.ActionLink("Đăng Nhập", "Login", "User")
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

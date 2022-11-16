@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLShopGundam" Class="dbQLShopGundamDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=CACHE;Initial Catalog=QLShopGundam;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLShopGundamConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ADMIN" Member="ADMINs">
+    <Type Name="ADMIN">
+      <Column Name="MaAdmin" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTenAdmin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChiAdmin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DienThoaiAdmin" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TenDNAdmin" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="MatKhauAdmin" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="NgaySinhAdmin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="GioiTinhAdmin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EmailAdmin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QuyenAdmin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.THAMDO" Member="THAMDOs">
+    <Type Name="THAMDO">
+      <Column Name="MaCH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NgayDang" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NoiDungThamDo" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="TongSoBinhChon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CAPDO" Member="CAPDOs">
+    <Type Name="CAPDO">
+      <Column Name="MaCD" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenCapDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTDATHANG" Member="CTDATHANGs">
+    <Type Name="CTDATHANG">
+      <Column Name="SoDH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaSach" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Decimal" DbType="Decimal(20,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTTHAMDO" Member="CTTHAMDOs">
+    <Type Name="CTTHAMDO">
+      <Column Name="MaCH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NoiDungTraLoi" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SoLanBinhChon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DONDATHANG" Member="DONDATHANGs">
+    <Type Name="DONDATHANG">
+      <Column Name="SoDH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayDH" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TriGia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DaGiao" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NgayGiaoHang" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TenNguoiNhan" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChiNhan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DienThoaiNhan" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="HTThanhToan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HTGiaoHang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GUNDAM" Member="GUNDAMs">
+    <Type Name="GUNDAM">
+      <Column Name="MaGundam" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenGundam" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DonViTinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MoTa" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HinhMinhHoa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MaCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgaySanXuat" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SoLuongBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLanXem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuongConLai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
+    <Type Name="KHACHHANG">
+      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTenKH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChiKH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DienThoaiKH" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TenDN" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="MatKhau" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DaDuyet" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QUANGCAO" Member="QUANGCAOs">
+    <Type Name="QUANGCAO">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenCongTy" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="HinhMinhHoa" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Href" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NgayBatDau" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NgayHetHan" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

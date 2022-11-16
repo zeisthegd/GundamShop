@@ -1,0 +1,113 @@
+﻿@model GundamShop.Models.GUNDAM
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Bạn có chắc chắn muốn xóa bỏ sản phẩm này không?</h3>
+    <div>
+        <h4>GUNDAM</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TenGundam)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenGundam)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DonViTinh)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DonViTinh)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DonGia)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DonGia)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MoTa)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MoTa)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HinhMinhHoa)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HinhMinhHoa)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MaCD)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaCD)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgaySanXuat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgaySanXuat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SoLuongBan)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SoLuongBan)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SoLanXem)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SoLanXem)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SoLuongConLai)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SoLuongConLai)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm("Delete", "Storage", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

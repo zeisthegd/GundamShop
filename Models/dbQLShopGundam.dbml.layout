@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.75" name="dbQLShopGundam">
+  <DataContextMoniker Name="/dbQLShopGundamDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3d02bbe1-0c49-4e46-965a-703763d22652" absoluteBounds="0.75, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/dbQLShopGundamDataContext/ADMIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="184bf2dd-da58-48c4-9aaf-1bf89c1fa2ac" absoluteBounds="0.765, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c4219d76-90e3-405a-87c2-b6ddbfb152df" absoluteBounds="3.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbQLShopGundamDataContext/THAMDO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="955f31bb-d4a0-4888-b83f-bd04897eb7a7" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b95fa326-9077-41c5-9d64-354c75891567" absoluteBounds="3.75, 3.75, 2, 1.193992513020834">
+      <DataClassMoniker Name="/dbQLShopGundamDataContext/CAPDO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a6cb7822-8ec6-4c26-8e83-a305084aaa1c" absoluteBounds="3.765, 4.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3257142c-759a-463f-b262-56210a733046" absoluteBounds="0.75, 5.75, 2, 1.7708968098958326">
+      <DataClassMoniker Name="/dbQLShopGundamDataContext/CTDATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="210bc56f-051b-4fc8-8105-1bc4c434f795" absoluteBounds="0.765, 6.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eff87c1f-cf10-4755-89bc-4786e27e220c" absoluteBounds="3.75, 5.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbQLShopGundamDataContext/CTTHAMDO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="99fce5d8-ce37-4265-aa4d-58e893310a0b" absoluteBounds="3.765, 6.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d52eaade-d03d-47d5-9ac0-f3ca3e7d8e73" absoluteBounds="6.75, 0.75, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/dbQLShopGundamDataContext/DONDATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9013a9a7-0ddd-4643-a8fd-3ba70e4bdaa2" absoluteBounds="6.765, 1.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2dd79c0-cf8b-42ba-afac-41e8223bfe7f" absoluteBounds="6.75, 4.75, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/dbQLShopGundamDataContext/GUNDAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8b7ab453-4483-41d6-a990-06d84faa058e" absoluteBounds="6.765, 5.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="412c270c-ea81-4886-ab12-c3f71dca1ad1" absoluteBounds="0.75, 8.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/dbQLShopGundamDataContext/KHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a65233a-c3cc-4804-8380-fa171b960a65" absoluteBounds="0.765, 9.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a2cb74ec-d234-4544-b02a-a04aa0a89fbe" absoluteBounds="3.75, 8.75, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/dbQLShopGundamDataContext/QUANGCAO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee2b78b6-a2bb-4bbc-9ac8-8344bcd5aec4" absoluteBounds="3.765, 9.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

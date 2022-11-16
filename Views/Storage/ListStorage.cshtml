@@ -1,0 +1,74 @@
+﻿@model IEnumerable<GundamShop.Models.GUNDAM>
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<body>
+    <table class="table">
+        <tr>
+            <th>
+                Tên Gundam
+            </th>
+            <th>
+                Đơn Giá
+            </th>
+            <th>
+                Hình Mình Họa
+            </th>
+            <th>
+                Cấp Độ
+            </th>
+            <th>
+                Ngày Sản Xuất
+            </th>
+            <th>
+                Số Lượng Bán
+            </th>
+            <th>
+                Số Lượt Xem
+            </th>
+            <th>
+                Số Lượng Còn Lại
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenGundam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonGia)
+                </td>
+                <td>
+                    <img src="~/Storage/HinhMinhHoa/Gundam/@item.HinhMinhHoa" height="86" width="86" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaCD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgaySanXuat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoLuongBan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoLanXem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoLuongConLai)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MaGundam }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MaGundam })
+                </td>
+            </tr>
+
+        }
+
+    </table>
+</body>
