@@ -42,7 +42,7 @@
                     @Html.DisplayFor(modelItem => item.TenGundam)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DonGia)
+                    @MoneyHelper.FormatMoney(item.DonGia)
                 </td>
                 <td>
                     <img src="~/Storage/HinhMinhHoa/Gundam/@item.HinhMinhHoa" height="86" width="86" />

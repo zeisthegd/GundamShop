@@ -2,6 +2,6 @@
 <ul>
     @foreach (GundamShop.Models.CAPDO cd in Model)
     {
-        <li><a href="#">@cd.TenCapDo</a></li>
+        <li><a href="@Url.Action("FullShopContent", new {maCD = cd.MaCD,page= 1})">@cd.TenCapDo</a></li>
     }
 </ul>

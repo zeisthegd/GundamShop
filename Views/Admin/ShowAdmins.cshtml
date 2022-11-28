@@ -1,0 +1,83 @@
+﻿@model IEnumerable<GundamShop.Models.ADMIN>
+
+@{
+    ViewBag.Title = "Danh Sách Admin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Thêm Admin", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Họ Tên Admin
+        </th>
+        <th>
+            Địa Chỉ
+        </th>
+        <th>
+            SĐT
+        </th>
+        <th>
+            Tên Đăng Nhập
+        </th>
+        <th>
+            Mật Khẩu
+        </th>
+        <th>
+            Ngày Sinh
+        </th>
+        <th>
+            Giới Tính
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Quyền
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTenAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChiAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DienThoaiAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenDNAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatKhauAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgaySinhAdmin)
+            </td>
+            <td>
+                @Html.DropDownListFor(modelItem => item.GioiTinhAdmin, new SelectList(new List<Object>{
+                           new { value = false , text = "Nữ"  },
+                           new { value = true , text = "Nam" }
+                        },
+                      "value",
+                      "text",
+                       item.GioiTinhAdmin))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAdmin)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaAdmin }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaAdmin })
+            </td>
+        </tr>
+    }
+
+</table>

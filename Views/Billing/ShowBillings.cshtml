@@ -1,0 +1,82 @@
+﻿@model IEnumerable<GundamShop.Models.DONDATHANG>
+
+@{
+    ViewBag.Title = "ShowBillings";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Mã Khách Hàng
+        </th>
+        <th>
+            Ngày Đặt Hàng
+        </th>
+        <th>
+            Trị Giá
+        </th>
+        <th>
+            Đã Giao
+        </th>
+        <th>
+            Ngày Giao Hàng
+        </th>
+        <th>
+           Tên Người Nhận
+        </th>
+        <th>
+            Địa Chỉ Nhận
+        </th>
+        <th>
+            Điện Thoại Nhận
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HTThanhToan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HTGiaoHang)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDH)
+        </td>
+        <td>
+            @MoneyHelper.FormatMoney(item.TriGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DaGiao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayGiaoHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNguoiNhan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChiNhan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DienThoaiNhan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HTThanhToan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HTGiaoHang)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SoDH })
+            @Html.ActionLink("Delete", "Delete", new { id=item.SoDH })
+        </td>
+    </tr>
+}
+
+</table>

@@ -68,19 +68,23 @@ namespace GundamShop.Views.GundamShop
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(int id, [Bind(Include = "TenGundam,DonGia,MoTa,HinhMinhHoa,MaCD,NgaySanXuat,SoLuongBan,SoLanXem,SoLuongConLai")] GUNDAM modGD, HttpPostedFileBase HinhMinhHoa)
+        public ActionResult Edit(int id, [Bind(Include = "TenGundam,DonGia,MoTa,HinhMinhHoa,MaCD,NgaySanXuat,SoLuongBan,SoLanXem,SoLuongConLai")] GUNDAM modGD, HttpPostedFileBase HinhMinhHoa, FormCollection form)
         {
             if (ModelState.IsValid)
             {
-                if (HinhMinhHoa.ContentLength > 0)
+                if (HinhMinhHoa != null && HinhMinhHoa.ContentLength > 0)
                 {
                     modGD.HinhMinhHoa = SaveImage(HinhMinhHoa);
+                }
+                else
+                {
+                    modGD.HinhMinhHoa = form["oldimage"];
                 }
                 db.GUNDAMs.DeleteOnSubmit(GetGundamByID(id));
                 db.GUNDAMs.InsertOnSubmit(modGD);
                 db.SubmitChanges();
+                return RedirectToAction("ListStorage");
             }
-            return RedirectToAction("ListStorage");
             ViewBag.MaCD = new SelectList(db.CAPDOs.ToList(), "MaCD", "TenCapDo");
             return View(modGD);
         }

@@ -682,8 +682,8 @@ namespace GundamShop.Models
     partial void OnCreated();
     partial void OnSoDHChanging(int value);
     partial void OnSoDHChanged();
-    partial void OnMaSachChanging(int value);
-    partial void OnMaSachChanged();
+    partial void OnMaGundamChanging(int value);
+    partial void OnMaGundamChanged();
     partial void OnSoLuongChanging(System.Nullable<int> value);
     partial void OnSoLuongChanged();
     partial void OnDonGiaChanging(System.Nullable<decimal> value);
@@ -717,8 +717,8 @@ namespace GundamShop.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSach", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaSach
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="MaSach", Storage="_MaSach", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaGundam
 		{
 			get
 			{
@@ -728,11 +728,11 @@ namespace GundamShop.Models
 			{
 				if ((this._MaSach != value))
 				{
-					this.OnMaSachChanging(value);
+					this.OnMaGundamChanging(value);
 					this.SendPropertyChanging();
 					this._MaSach = value;
-					this.SendPropertyChanged("MaSach");
-					this.OnMaSachChanged();
+					this.SendPropertyChanged("MaGundam");
+					this.OnMaGundamChanged();
 				}
 			}
 		}

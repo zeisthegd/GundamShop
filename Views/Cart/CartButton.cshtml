@@ -1,3 +1,5 @@
 ﻿<ul>
     <li><a href="@Url.Action("ViewCart","Cart")"><i class="fa fa-shopping-bag"></i> <span>@ViewBag.TotalAmount</span></a></li>
 </ul>
+<div class="header__cart__price">item: <span>@MoneyHelper.FormatMoney(@ViewBag.TotalCost)</span></div>
+

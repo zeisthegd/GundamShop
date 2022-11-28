@@ -1,0 +1,34 @@
+﻿@model IEnumerable<GundamShop.Models.GUNDAM>
+
+<div class="col-lg-4 col-md-6">
+    <div class="latest-product__text">
+        <h4>Sản Phẩm Mới</h4>
+        <div class="latest-product__slider owl-carousel">
+            @for (int i = 0; i < 3; i++)
+            {
+                <div class="latest-prdouct__slider__item">
+                    @for (int j = 0; j < 3 && (i * 3 + j < Model.Count()); j++)
+                    {
+                        GundamShop.Models.GUNDAM gd = Model.ElementAt(i * 3 + j);
+                        if (gd != null)
+                        {
+                            <a href="@Url.Action("Details","GundamShop", new { id = gd.MaGundam })" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="~/Storage/HinhMinhHoa/Gundam/@gd.HinhMinhHoa" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>@gd.TenGundam</h6>
+                                    <span>@MoneyHelper.FormatMoney(gd.DonGia)</span>
+                                </div>
+                            </a>
+                        }
+                    }
+                </div>
+                if ((i + 1) * 3 > Model.Count())
+                {
+                    break;
+                }
+            }
+        </div>
+    </div>
+</div>

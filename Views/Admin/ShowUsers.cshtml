@@ -1,11 +1,9 @@
 ﻿@model IEnumerable<GundamShop.Models.KHACHHANG>
 
 @{
-    ViewBag.Title = "ShowUsers";
-    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    ViewBag.Title = "Danh Sách User";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-
-<h2>ShowUsers</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,70 +11,65 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.HoTenKH)
+            Họ và Tên
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DiaChiKH)
+            Địa Chỉ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DienThoaiKH)
+           SĐT
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TenDN)
+            Tên Đăng Nhập
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MatKhau)
+            Mật Khẩu
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NgaySinh)
+            Ngày Sinh
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GioiTinh)
+           Giới Tính
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            Email
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DaDuyet)
-        </th>
-        <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.HoTenKH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DiaChiKH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DienThoaiKH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenDN)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MatKhau)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgaySinh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GioiTinh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DaDuyet)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaKH }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaKH }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaKH })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTenKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChiKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DienThoaiKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenDN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatKhau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgaySinh)
+            </td>
+            <td>
+                @Html.DropDownListFor(modelItem => item.GioiTinh, new SelectList(new List<Object>{
+                           new { value = false , text = "Nữ"  },
+                           new { value = true , text = "Nam" }
+                        },
+                      "value",
+                      "text",
+                       item.GioiTinh))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+        </tr>
+    }
 
 </table>

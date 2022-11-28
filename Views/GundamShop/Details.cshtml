@@ -25,9 +25,8 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star-half-o"></i>
-                        <span>(18 reviews)</span>
                     </div>
-                    <div class="product__details__price">@Model.DonGia VNĐ</div>
+                    <div class="product__details__price">@MoneyHelper.FormatMoney(Model.DonGia)</div>
                     <div class="product__details__quantity">
                         <div class="quantity">
                             <div class="pro-qty">
@@ -38,8 +37,9 @@
                     @Html.ActionLink("ĐẶT MUA", "AddCart", "Cart", new { maGundam = Model.MaGundam, rqUrl = Request.Url.ToString() }, new { @class = "primary-btn" })
                     <a href="" class="heart-icon"><span class="icon_heart_alt"></span></a>
                     <ul>
-                        <li><b>Availability</b> <span>In Stock</span></li>
-                        <li><b>Weight</b> <span>0.5 kg</span></li>
+                        <li><b>Còn Lại</b> <span>@Model.SoLuongConLai</span></li>
+                        <li><b>Lượt Xem</b> <span>@Model.SoLanXem</span></li>
+                        <li><b>Đã Bán</b> <span>@Model.SoLuongBan</span></li>
                     </ul>
                 </div>
             </div>

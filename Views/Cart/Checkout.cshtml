@@ -1,0 +1,90 @@
+﻿@using GundamShop.Models
+@{
+    ViewBag.Title = "Thanh Toán";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<!-- Checkout Section Begin -->
+<section class="checkout spad">
+    <div class="container">
+        <div class="checkout__form">
+            <h4>Chi Tiết Hóa Đơn</h4>
+            @using (Html.BeginForm("Checkout", "Cart", FormMethod.Post))
+            {
+                <div class="row">
+                    <div class="col-lg-8 col-md-6">
+                        <div class="checkout__order">
+                            <h4>Đơn Đặt Hàng</h4>
+                            <div class="checkout__order__products">Sản Phẩm <span>Tổng Cộng</span></div>
+                            <ul>
+                                @foreach (Cart cart in Model)
+                                {
+                                    <li>@cart.TenGundam x @cart.SoLuong<span>@MoneyHelper.FormatMoney(cart.DonGia)</span></li>
+                                }
+                            </ul>
+                            <div class="checkout__order__subtotal">Tổng Số Lượng <span>@ViewBag.TotalAmount Mẫu</span></div>
+                            <div class="checkout__order__total">Thành Tiền <span>@MoneyHelper.FormatMoney(@ViewBag.TotalCost)</span></div>
+                            <div class="checkout__input__checkbox">
+                                <label for="payment">
+                                    Kiểm Tra Thanh Toán
+                                    <input type="checkbox" id="payment">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="checkout__input__checkbox">
+                                <label for="paypal">
+                                    VNPAY
+                                    <input type="checkbox" id="paypal">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <button type="submit" class="site-btn">ĐẶT HÀNG</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Tên Khách Hàng<span>*</span></p>
+                                    @Html.TextBox("TenKH", (Session["KhachHang"] as KHACHHANG).HoTenKH, new { @disabled = "disabled" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Địa Chỉ<span>*</span></p>
+                            @Html.TextBox("TenKH", (Session["KhachHang"] as KHACHHANG).DiaChiKH)
+                        </div>
+                        <div class="checkout__input">
+                            <p>Ngày Sinh<span>*</span></p>
+                            @Html.TextBox("TenKH", (Session["KhachHang"] as KHACHHANG).NgaySinh, new { @disabled = "disabled" })
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Số Điện Thoại<span>*</span></p>
+                                    @Html.TextBox("TenKH", (Session["KhachHang"] as KHACHHANG).DienThoaiKH, new { @disabled = "disabled" })
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Email<span>*</span></p>
+                                    @Html.TextBox("TenKH", (Session["KhachHang"] as KHACHHANG).Email, new { @disabled = "disabled" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Ngày Giao Hàng (Dự Kiến)<span>*</span></p>
+                            <input type="text" disabled="disabled" value=@DateTime.Today.AddDays(7).ToString("dd/MM/yyyy")>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Ghi Chú<span>*</span></p>
+                            <input type="text"
+                                   placeholder="Mời bạn nhập ghi chú cho hóa đơn. Nếu có.">
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- Checkout Section End -->

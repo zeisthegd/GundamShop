@@ -23,5 +23,10 @@ namespace GundamShop.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult Breadcrumb()
+        {
+            return PartialView();
+        }
     }
 }

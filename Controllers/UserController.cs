@@ -40,7 +40,7 @@ namespace GundamShop.Controllers
                     ViewBag.ThongBaoSignIn = $"Đăng nhập thành công. Chào mừng {khach.HoTenKH}";
                     Session["KhachHang"] = khach;
                     Session["TenKhachHang"] = khach.HoTenKH;   
-                    return RedirectToAction("ShowUsers", "Admin");
+                    return RedirectToAction("Index", "GundamShop");
                 }
                 else
                 {

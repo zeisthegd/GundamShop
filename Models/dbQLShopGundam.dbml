@@ -31,7 +31,7 @@
   <Table Name="dbo.CTDATHANG" Member="CTDATHANGs">
     <Type Name="CTDATHANG">
       <Column Name="SoDH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaSach" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaSach" Member="MaGundam" Storage="_MaSach" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DonGia" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
       <Column Name="ThanhTien" Type="System.Decimal" DbType="Decimal(20,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />

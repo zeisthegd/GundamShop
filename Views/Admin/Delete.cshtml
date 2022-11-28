@@ -1,0 +1,95 @@
+﻿@model GundamShop.Models.ADMIN
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h4>Bạn muốn xóa ADMIN này khỏi CSDL?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Họ Tên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTenAdmin)
+        </dd>
+
+        <dt>
+            Địa Chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChiAdmin)
+        </dd>
+
+        <dt>
+            Điện Thoại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DienThoaiAdmin)
+        </dd>
+
+        <dt>
+            Tên Đăng Nhập
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenDNAdmin)
+        </dd>
+
+        <dt>
+            Mật Khẩu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatKhauAdmin)
+        </dd>
+
+        <dt>
+            Ngày Sinh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinhAdmin)
+        </dd>
+
+        <dt>
+            Giới Tính
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GioiTinhAdmin)
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAdmin)
+        </dd>
+
+        <dt>
+            Quyền
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuyenAdmin)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("Delete", "Admin", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Danh Sách Admin", "ShowAdmins")
+        </div>
+    }
+</div>
