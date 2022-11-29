@@ -32,7 +32,7 @@ namespace GundamShop.Models
             filterContext.Result = new RedirectToRouteResult(
             new RouteValueDictionary
             {
-                { "controller", allowedroles.Contains("Admin") ? "Admin" : "GundamShop" },
+                { "controller", allowedroles.Contains("Admin") ? "Admin" : "User" },
                 { "action", "Login" }
             });
         }

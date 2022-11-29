@@ -501,7 +501,7 @@ namespace GundamShop.Models
 		
 		private int _SoDH;
 		
-		private int _MaSach;
+		private int _MaGundam;
 		
 		private System.Nullable<int> _SoLuong;
 		
@@ -550,20 +550,20 @@ namespace GundamShop.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="MaSach", Storage="_MaSach", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaGundam", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int MaGundam
 		{
 			get
 			{
-				return this._MaSach;
+				return this._MaGundam;
 			}
 			set
 			{
-				if ((this._MaSach != value))
+				if ((this._MaGundam != value))
 				{
 					this.OnMaGundamChanging(value);
 					this.SendPropertyChanging();
-					this._MaSach = value;
+					this._MaGundam = value;
 					this.SendPropertyChanged("MaGundam");
 					this.OnMaGundamChanged();
 				}

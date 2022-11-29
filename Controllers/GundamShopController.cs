@@ -20,6 +20,10 @@ namespace GundamShop.Controllers
         {
             return View(gFinder.GetGundamsByManuDate(5));
         }
+        public ActionResult Contact()
+        {
+            return View();
+        }
         public ActionResult FullShopContent(int? page, string searchString, int? maCD)
         {
 
@@ -64,7 +68,13 @@ namespace GundamShop.Controllers
 
         public ActionResult FeaturedProducts()
         {
-            return PartialView(gFinder.GetGundamsByManuDate(3).OrderByDescending(gd => gd.SoLuongBan).First());
+            List<GUNDAM> result = new List<GUNDAM>();
+            ViewBag.ListCapDo = db.CAPDOs.ToList();
+            foreach(CAPDO capDo in db.CAPDOs.ToList())
+            {
+                result.AddRange(gFinder.GetGundamsByLevel(capDo.MaCD, 100).OrderByDescending(sp => sp.NgaySanXuat).OrderByDescending(gd => gd.SoLuongBan).Take(3));
+            }
+            return PartialView(result);
         }
 
         public ActionResult ListCapDo()
