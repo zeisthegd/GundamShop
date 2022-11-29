@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace GundamShop.Views.GundamShop
 {
+    [ShopAuthorize("Admin")]
     public class StorageController : Controller
     {
         dbQLShopGundamDataContext db = new dbQLShopGundamDataContext();

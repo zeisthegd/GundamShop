@@ -83,6 +83,7 @@ namespace GundamShop.Controllers
         }
 
         [HttpGet]
+        [ShopAuthorize("KhachHang")]
         public ActionResult Checkout()
         {
             if (Session["KhachHang"] == null || (string)Session["TenKhachHang"] == "")
@@ -102,6 +103,7 @@ namespace GundamShop.Controllers
         }
 
         [HttpPost]
+        [ShopAuthorize("KhachHang")]
         public ActionResult Checkout(FormCollection form)
         {
             DONDATHANG ddh = new DONDATHANG();
@@ -133,6 +135,7 @@ namespace GundamShop.Controllers
             return RedirectToAction("ConfirmCheckout", "Cart");
         }
 
+        [ShopAuthorize("KhachHang")]
         public ActionResult ConfirmCheckout()
         {
             checkedOutCart = new List<Cart>(GetCart());

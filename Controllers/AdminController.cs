@@ -10,7 +10,7 @@ using System.Net;
 
 namespace GundamShop.Controllers
 {
-
+    [ShopAuthorize("Admin")]
     public class AdminController : Controller
     {
         dbQLShopGundamDataContext data = new dbQLShopGundamDataContext();
@@ -27,12 +27,14 @@ namespace GundamShop.Controllers
 
 
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult Login(FormCollection collection)
         {
             var tenDN = collection["TenDangNhap"];
@@ -53,6 +55,7 @@ namespace GundamShop.Controllers
                     ViewBag.ThongBaoSignIn = $"Đăng nhập thành công. Chào mừng {admin.TenDNAdmin}";
                     Session["Admin"] = admin;
                     Session["TenAdmin"] = admin.TenDNAdmin;
+                    Session["Role"] = "Admin";
                     return RedirectToAction("ShowAdmins", "Admin");
                 }
                 else

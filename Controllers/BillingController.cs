@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace GundamShop.Controllers
 {
+    [ShopAuthorize("Admin")]
     public class BillingController : Controller
     {
         private dbQLShopGundamDataContext db = new dbQLShopGundamDataContext();

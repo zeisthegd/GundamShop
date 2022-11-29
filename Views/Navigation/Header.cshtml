@@ -15,12 +15,12 @@
                         <div class="header__top__right__auth">
                             @if (Session["KhachHang"] == null)
                             {
-                                @Html.ActionLink("Tài Khoản", "Login", "User");
+                                <a href=@Url.Action("Login","User")><i class="fa fa-user"> Đăng Nhập</i></a>
                             }
                             else
                             {
                                 string tenKh = Session["TenKhachHang"].ToString();
-                                @Html.ActionLink(tenKh, "Profile", "User");
+                                <a href=@Url.Action("Index","GundamShop")><i class="fa fa-user"> @tenKh</i></a>
                             }
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                     <ul>
                         <li class="active">@Html.ActionLink("GundamME", "Index", "GundamShop")
                         <li>@Html.ActionLink("Cửa Hàng", "FullShopContent", "GundamShop")</li>
-                        <li><a href="./contact.html">Liên Hệ</a></li>
+                        <li><a href=@Url.Action("Contact","Home")>Liên Hệ</a></li>
                     </ul>
                 </nav>
             </div>

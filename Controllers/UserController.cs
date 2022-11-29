@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Policy;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -39,7 +40,8 @@ namespace GundamShop.Controllers
                 {
                     ViewBag.ThongBaoSignIn = $"Đăng nhập thành công. Chào mừng {khach.HoTenKH}";
                     Session["KhachHang"] = khach;
-                    Session["TenKhachHang"] = khach.HoTenKH;   
+                    Session["TenKhachHang"] = khach.HoTenKH;
+                    Session["Role"] = "KhachHang";
                     return RedirectToAction("Index", "GundamShop");
                 }
                 else
@@ -106,6 +108,14 @@ namespace GundamShop.Controllers
             return this.Login();
         }
 
+        [HttpPost]
+        public ActionResult LogOff()
+        {
+            Session["KhachHang"] = null;
+            Session["TenKhachHang"] = null;
+            Session["Role"] = null;
+            return RedirectToAction("Index", "GundamShop");
+        }
 
 
     }
