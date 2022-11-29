@@ -26,18 +26,11 @@
            Tên Người Nhận
         </th>
         <th>
-            Địa Chỉ Nhận
+            Địa Chỉ Người Nhận
         </th>
         <th>
-            Điện Thoại Nhận
+            Điện Thoại Người Nhận
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HTThanhToan)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HTGiaoHang)
-        </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -65,12 +58,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DienThoaiNhan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HTThanhToan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HTGiaoHang)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.SoDH })

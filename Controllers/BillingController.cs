@@ -23,9 +23,40 @@ namespace GundamShop.Controllers
             return View(GetBillingByID(id));
         }
 
+        [HttpPost]
+        public ActionResult Edit(int? id, [Bind(Include = "MaKH,NgayDH,TriGia,DaGiao,NgayGiaoHang,TenNguoiNhan,DiaChiNhan,DienThoaiNhan")] DONDATHANG modBil, FormCollection form)//id==soDH
+        {
+            ViewBag.BillingDetails = GetBillingsDetails(id);
+            if (ModelState.IsValid)
+            {
+                db.DONDATHANGs.DeleteOnSubmit(GetBillingByID(id));
+                db.DONDATHANGs.InsertOnSubmit(modBil);
+                db.SubmitChanges();
+                return RedirectToAction("ShowBillings");
+            }
+            return View(GetBillingByID(id));
+        }
+
         public ActionResult Delete(int? id)
         {
             return View(GetBillingByID(id));
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int? id)
+        {
+            var billing = GetBillingByID(id);
+            var details = GetBillingsDetails(id);
+            
+            foreach (CTDATHANG ctdh in details)
+            {
+                db.CTDATHANGs.DeleteOnSubmit(ctdh);
+            }
+            db.DONDATHANGs.DeleteOnSubmit(billing);
+
+            db.SubmitChanges();
+            return RedirectToAction("ShowBillings");
         }
 
         public List<CTDATHANG> GetBillingsDetails(int? id)

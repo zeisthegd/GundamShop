@@ -773,7 +773,6 @@
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\GundamShop\Index.cshtml" />
     <Content Include="Views\GundamShop\ListCapDo.cshtml" />
-    <Content Include="Views\GundamShop\SPTheoCapDo.cshtml" />
     <Content Include="Views\GundamShop\FullShopContent.cshtml" />
     <Content Include="Views\Navigation\Header.cshtml" />
     <Content Include="Views\Navigation\Footer.cshtml" />
@@ -803,6 +802,7 @@
     <Content Include="Views\Cart\ConfirmCheckout.cshtml" />
     <Content Include="Views\Billing\Edit.cshtml" />
     <Content Include="Views\Billing\Delete.cshtml" />
+    <Content Include="Views\GundamShop\FeaturedProducts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

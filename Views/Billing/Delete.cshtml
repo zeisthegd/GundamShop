@@ -13,7 +13,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.MaKH)
+            Mã Khách Hàng
         </dt>
 
         <dd>
@@ -21,7 +21,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NgayDH)
+            Ngày Đặt Hàng
         </dt>
 
         <dd>
@@ -29,7 +29,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TriGia)
+            Trị Giá
         </dt>
 
         <dd>
@@ -37,7 +37,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DaGiao)
+            Đã Giao
         </dt>
 
         <dd>
@@ -45,7 +45,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NgayGiaoHang)
+            Ngày Giao Hàng
         </dt>
 
         <dd>
@@ -53,7 +53,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TenNguoiNhan)
+            Tên Người Nhận
         </dt>
 
         <dd>
@@ -61,7 +61,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DiaChiNhan)
+            Địa Chỉ Nhận
         </dt>
 
         <dd>
@@ -69,27 +69,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DienThoaiNhan)
+            Điện Thoại Người Nhận
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.DienThoaiNhan)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HTThanhToan)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HTThanhToan)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.HTGiaoHang)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HTGiaoHang)
         </dd>
 
     </dl>
@@ -99,7 +83,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Danh Sách Đơn Hàng", "ShowBillings", "Billing")
         </div>
     }
 </div>

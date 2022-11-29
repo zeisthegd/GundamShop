@@ -1,19 +1,23 @@
-﻿<!-- Breadcrumb Section Begin -->
-<section class="breadcrumb-section set_bg" style="background-image: url('/Storage/HinhMinhHoa/Banner/gundam_niceview.png'); background-repeat: no-repeat; background-size: cover; background-position: top center; ">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div class="breadcrumb__text">
-                    <h2>GundamME</h2>
-                    <div class="breadcrumb__option">
-                        <a href="@Url.Action("Index","GundamShop")">Home</a>
-                        <span>
-                            @ViewBag.CurrentPage
-                        </span>
+﻿@if (Request.RawUrl != "/GundamShop/Index")
+{
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set_bg" style="background-image: url('/Storage/HinhMinhHoa/Banner/gundam_niceview.png'); background-repeat: no-repeat; background-size: cover; background-position: top center; ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>GundamME</h2>
+                        <div class="breadcrumb__option">
+                            <a href="@Url.Action("Index","GundamShop")">Home</a>
+                            <span>
+                                @ViewBag.CurrentPage
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Breadcrumb Section End -->
+    </section>
+    <!-- Breadcrumb Section End -->
+}
+

@@ -62,23 +62,15 @@ namespace GundamShop.Controllers
             return PartialView(gFinder.GetGundamsByLuotXem(9));
         }
 
+        public ActionResult FeaturedProducts()
+        {
+            return PartialView(gFinder.GetGundamsByManuDate(3).OrderByDescending(gd => gd.SoLuongBan).First());
+        }
 
         public ActionResult ListCapDo()
         {
             var capDo = from cd in db.CAPDOs select cd;
             return PartialView(capDo);
-        }
-
-        public ActionResult SPTheoCapDo(int? maCD, int? page)
-        {
-            if (page == null) page = 1;
-            var lstProd = gFinder.GetGundamsByLevel(maCD);
-            int pageSize = 9;
-
-            int pageNumber = (page ?? 1);
-            ViewBag.TotalProducts = lstProd.Count;
-
-            return View(lstProd.ToPagedList(pageNumber, pageSize));
         }
 
         public ActionResult Details(int? id)

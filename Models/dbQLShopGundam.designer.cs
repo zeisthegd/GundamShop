@@ -33,18 +33,12 @@ namespace GundamShop.Models
     partial void InsertADMIN(ADMIN instance);
     partial void UpdateADMIN(ADMIN instance);
     partial void DeleteADMIN(ADMIN instance);
-    partial void InsertTHAMDO(THAMDO instance);
-    partial void UpdateTHAMDO(THAMDO instance);
-    partial void DeleteTHAMDO(THAMDO instance);
     partial void InsertCAPDO(CAPDO instance);
     partial void UpdateCAPDO(CAPDO instance);
     partial void DeleteCAPDO(CAPDO instance);
     partial void InsertCTDATHANG(CTDATHANG instance);
     partial void UpdateCTDATHANG(CTDATHANG instance);
     partial void DeleteCTDATHANG(CTDATHANG instance);
-    partial void InsertCTTHAMDO(CTTHAMDO instance);
-    partial void UpdateCTTHAMDO(CTTHAMDO instance);
-    partial void DeleteCTTHAMDO(CTTHAMDO instance);
     partial void InsertDONDATHANG(DONDATHANG instance);
     partial void UpdateDONDATHANG(DONDATHANG instance);
     partial void DeleteDONDATHANG(DONDATHANG instance);
@@ -54,9 +48,6 @@ namespace GundamShop.Models
     partial void InsertKHACHHANG(KHACHHANG instance);
     partial void UpdateKHACHHANG(KHACHHANG instance);
     partial void DeleteKHACHHANG(KHACHHANG instance);
-    partial void InsertQUANGCAO(QUANGCAO instance);
-    partial void UpdateQUANGCAO(QUANGCAO instance);
-    partial void DeleteQUANGCAO(QUANGCAO instance);
     #endregion
 		
 		public dbQLShopGundamDataContext() : 
@@ -97,14 +88,6 @@ namespace GundamShop.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<THAMDO> THAMDOs
-		{
-			get
-			{
-				return this.GetTable<THAMDO>();
-			}
-		}
-		
 		public System.Data.Linq.Table<CAPDO> CAPDOs
 		{
 			get
@@ -118,14 +101,6 @@ namespace GundamShop.Models
 			get
 			{
 				return this.GetTable<CTDATHANG>();
-			}
-		}
-		
-		public System.Data.Linq.Table<CTTHAMDO> CTTHAMDOs
-		{
-			get
-			{
-				return this.GetTable<CTTHAMDO>();
 			}
 		}
 		
@@ -150,14 +125,6 @@ namespace GundamShop.Models
 			get
 			{
 				return this.GetTable<KHACHHANG>();
-			}
-		}
-		
-		public System.Data.Linq.Table<QUANGCAO> QUANGCAOs
-		{
-			get
-			{
-				return this.GetTable<QUANGCAO>();
 			}
 		}
 	}
@@ -440,140 +407,6 @@ namespace GundamShop.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THAMDO")]
-	public partial class THAMDO : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaCH;
-		
-		private System.Nullable<System.DateTime> _NgayDang;
-		
-		private string _NoiDungThamDo;
-		
-		private System.Nullable<int> _TongSoBinhChon;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaCHChanging(int value);
-    partial void OnMaCHChanged();
-    partial void OnNgayDangChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgayDangChanged();
-    partial void OnNoiDungThamDoChanging(string value);
-    partial void OnNoiDungThamDoChanged();
-    partial void OnTongSoBinhChonChanging(System.Nullable<int> value);
-    partial void OnTongSoBinhChonChanged();
-    #endregion
-		
-		public THAMDO()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCH", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaCH
-		{
-			get
-			{
-				return this._MaCH;
-			}
-			set
-			{
-				if ((this._MaCH != value))
-				{
-					this.OnMaCHChanging(value);
-					this.SendPropertyChanging();
-					this._MaCH = value;
-					this.SendPropertyChanged("MaCH");
-					this.OnMaCHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDang", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> NgayDang
-		{
-			get
-			{
-				return this._NgayDang;
-			}
-			set
-			{
-				if ((this._NgayDang != value))
-				{
-					this.OnNgayDangChanging(value);
-					this.SendPropertyChanging();
-					this._NgayDang = value;
-					this.SendPropertyChanged("NgayDang");
-					this.OnNgayDangChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDungThamDo", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
-		public string NoiDungThamDo
-		{
-			get
-			{
-				return this._NoiDungThamDo;
-			}
-			set
-			{
-				if ((this._NoiDungThamDo != value))
-				{
-					this.OnNoiDungThamDoChanging(value);
-					this.SendPropertyChanging();
-					this._NoiDungThamDo = value;
-					this.SendPropertyChanged("NoiDungThamDo");
-					this.OnNoiDungThamDoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongSoBinhChon", DbType="Int")]
-		public System.Nullable<int> TongSoBinhChon
-		{
-			get
-			{
-				return this._TongSoBinhChon;
-			}
-			set
-			{
-				if ((this._TongSoBinhChon != value))
-				{
-					this.OnTongSoBinhChonChanging(value);
-					this.SendPropertyChanging();
-					this._TongSoBinhChon = value;
-					this.SendPropertyChanged("TongSoBinhChon");
-					this.OnTongSoBinhChonChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CAPDO")]
 	public partial class CAPDO : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -793,140 +626,6 @@ namespace GundamShop.Models
 					this._ThanhTien = value;
 					this.SendPropertyChanged("ThanhTien");
 					this.OnThanhTienChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CTTHAMDO")]
-	public partial class CTTHAMDO : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaCH;
-		
-		private int _STT;
-		
-		private string _NoiDungTraLoi;
-		
-		private System.Nullable<int> _SoLanBinhChon;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaCHChanging(int value);
-    partial void OnMaCHChanged();
-    partial void OnSTTChanging(int value);
-    partial void OnSTTChanged();
-    partial void OnNoiDungTraLoiChanging(string value);
-    partial void OnNoiDungTraLoiChanged();
-    partial void OnSoLanBinhChonChanging(System.Nullable<int> value);
-    partial void OnSoLanBinhChonChanged();
-    #endregion
-		
-		public CTTHAMDO()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCH", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaCH
-		{
-			get
-			{
-				return this._MaCH;
-			}
-			set
-			{
-				if ((this._MaCH != value))
-				{
-					this.OnMaCHChanging(value);
-					this.SendPropertyChanging();
-					this._MaCH = value;
-					this.SendPropertyChanged("MaCH");
-					this.OnMaCHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int STT
-		{
-			get
-			{
-				return this._STT;
-			}
-			set
-			{
-				if ((this._STT != value))
-				{
-					this.OnSTTChanging(value);
-					this.SendPropertyChanging();
-					this._STT = value;
-					this.SendPropertyChanged("STT");
-					this.OnSTTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDungTraLoi", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
-		public string NoiDungTraLoi
-		{
-			get
-			{
-				return this._NoiDungTraLoi;
-			}
-			set
-			{
-				if ((this._NoiDungTraLoi != value))
-				{
-					this.OnNoiDungTraLoiChanging(value);
-					this.SendPropertyChanging();
-					this._NoiDungTraLoi = value;
-					this.SendPropertyChanged("NoiDungTraLoi");
-					this.OnNoiDungTraLoiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLanBinhChon", DbType="Int")]
-		public System.Nullable<int> SoLanBinhChon
-		{
-			get
-			{
-				return this._SoLanBinhChon;
-			}
-			set
-			{
-				if ((this._SoLanBinhChon != value))
-				{
-					this.OnSoLanBinhChonChanging(value);
-					this.SendPropertyChanging();
-					this._SoLanBinhChon = value;
-					this.SendPropertyChanged("SoLanBinhChon");
-					this.OnSoLanBinhChonChanged();
 				}
 			}
 		}
@@ -1809,188 +1508,6 @@ namespace GundamShop.Models
 					this._DaDuyet = value;
 					this.SendPropertyChanged("DaDuyet");
 					this.OnDaDuyetChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.QUANGCAO")]
-	public partial class QUANGCAO : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _STT;
-		
-		private string _TenCongTy;
-		
-		private string _HinhMinhHoa;
-		
-		private string _Href;
-		
-		private System.Nullable<System.DateTime> _NgayBatDau;
-		
-		private System.Nullable<System.DateTime> _NgayHetHan;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSTTChanging(int value);
-    partial void OnSTTChanged();
-    partial void OnTenCongTyChanging(string value);
-    partial void OnTenCongTyChanged();
-    partial void OnHinhMinhHoaChanging(string value);
-    partial void OnHinhMinhHoaChanged();
-    partial void OnHrefChanging(string value);
-    partial void OnHrefChanged();
-    partial void OnNgayBatDauChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgayBatDauChanged();
-    partial void OnNgayHetHanChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgayHetHanChanged();
-    #endregion
-		
-		public QUANGCAO()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int STT
-		{
-			get
-			{
-				return this._STT;
-			}
-			set
-			{
-				if ((this._STT != value))
-				{
-					this.OnSTTChanging(value);
-					this.SendPropertyChanging();
-					this._STT = value;
-					this.SendPropertyChanged("STT");
-					this.OnSTTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenCongTy", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
-		public string TenCongTy
-		{
-			get
-			{
-				return this._TenCongTy;
-			}
-			set
-			{
-				if ((this._TenCongTy != value))
-				{
-					this.OnTenCongTyChanging(value);
-					this.SendPropertyChanging();
-					this._TenCongTy = value;
-					this.SendPropertyChanged("TenCongTy");
-					this.OnTenCongTyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HinhMinhHoa", DbType="VarChar(20)")]
-		public string HinhMinhHoa
-		{
-			get
-			{
-				return this._HinhMinhHoa;
-			}
-			set
-			{
-				if ((this._HinhMinhHoa != value))
-				{
-					this.OnHinhMinhHoaChanging(value);
-					this.SendPropertyChanging();
-					this._HinhMinhHoa = value;
-					this.SendPropertyChanged("HinhMinhHoa");
-					this.OnHinhMinhHoaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Href", DbType="VarChar(100)")]
-		public string Href
-		{
-			get
-			{
-				return this._Href;
-			}
-			set
-			{
-				if ((this._Href != value))
-				{
-					this.OnHrefChanging(value);
-					this.SendPropertyChanging();
-					this._Href = value;
-					this.SendPropertyChanged("Href");
-					this.OnHrefChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayBatDau", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> NgayBatDau
-		{
-			get
-			{
-				return this._NgayBatDau;
-			}
-			set
-			{
-				if ((this._NgayBatDau != value))
-				{
-					this.OnNgayBatDauChanging(value);
-					this.SendPropertyChanging();
-					this._NgayBatDau = value;
-					this.SendPropertyChanged("NgayBatDau");
-					this.OnNgayBatDauChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayHetHan", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> NgayHetHan
-		{
-			get
-			{
-				return this._NgayHetHan;
-			}
-			set
-			{
-				if ((this._NgayHetHan != value))
-				{
-					this.OnNgayHetHanChanging(value);
-					this.SendPropertyChanging();
-					this._NgayHetHan = value;
-					this.SendPropertyChanged("NgayHetHan");
-					this.OnNgayHetHanChanged();
 				}
 			}
 		}
