@@ -805,6 +805,7 @@
     <Content Include="Views\Billing\Delete.cshtml" />
     <Content Include="Views\GundamShop\FeaturedProducts.cshtml" />
     <Content Include="Views\GundamShop\Contact.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

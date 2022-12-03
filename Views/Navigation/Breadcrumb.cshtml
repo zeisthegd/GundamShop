@@ -1,4 +1,4 @@
-﻿@if (Request.RawUrl != "/GundamShop/Index" && Request.RawUrl != "")
+﻿@if (@Html.ViewContext.ParentActionViewContext.RouteData.GetRequiredString("action") != "Index")
 {
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set_bg" style="background-image: url('/Storage/HinhMinhHoa/Banner/gundam_niceview.png'); background-repeat: no-repeat; background-size: cover; background-position: top center; ">

@@ -95,6 +95,26 @@ namespace GundamShop.Controllers
         }
 
         [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            return View((ADMIN)data.ADMINs.Where(x => x.MaAdmin == id).ToList()[0]);
+        }
+
+
+        [HttpPost]
+        public ActionResult Edit(int? id, ADMIN modAd, FormCollection form)
+        {
+            if (ModelState.IsValid)
+            {
+                data.ADMINs.DeleteOnSubmit((ADMIN)data.ADMINs.Where(x => x.MaAdmin == id).ToList()[0]);
+                data.ADMINs.InsertOnSubmit(modAd);
+                data.SubmitChanges();
+                return RedirectToAction("ShowAdmins");
+            }
+            return View(modAd);
+        }
+
+        [HttpGet]
         public ActionResult Delete(int? id)
         {
             if (id == null)
